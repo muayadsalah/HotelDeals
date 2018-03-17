@@ -44,10 +44,10 @@ public class HotelInfo extends ModelBase {
     private Double hotelLongitude;
 
     @JsonProperty(required = true)
-    private Float hotelStarRating;
+    private Double hotelStarRating;
 
     @JsonProperty(required = true)
-    private Float hotelGuestReviewRating;
+    private Double hotelGuestReviewRating;
 
     @JsonProperty(required = true)
     private Integer hotelReviewTotal;
@@ -160,19 +160,19 @@ public class HotelInfo extends ModelBase {
         this.hotelLongitude = hotelLongitude;
     }
 
-    public Float getHotelStarRating() {
+    public Double getHotelStarRating() {
         return hotelStarRating;
     }
 
-    public void setHotelStarRating(Float hotelStarRating) {
+    public void setHotelStarRating(Double hotelStarRating) {
         this.hotelStarRating = hotelStarRating;
     }
 
-    public Float getHotelGuestReviewRating() {
+    public Double getHotelGuestReviewRating() {
         return hotelGuestReviewRating;
     }
 
-    public void setHotelGuestReviewRating(Float hotelGuestReviewRating) {
+    public void setHotelGuestReviewRating(Double hotelGuestReviewRating) {
         this.hotelGuestReviewRating = hotelGuestReviewRating;
     }
 
