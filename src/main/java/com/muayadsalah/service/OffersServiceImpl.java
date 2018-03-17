@@ -28,7 +28,7 @@ public class OffersServiceImpl implements OffersService {
 
     @Override
     public Offers getOffers(String destinationName,
-                            String  destinationCity,
+                            String destinationCity,
                             String destinationCountry,
                             int[] regionIds,
                             Integer lengthOfStay,
@@ -58,7 +58,7 @@ public class OffersServiceImpl implements OffersService {
             JsonNode offers1 = objectMapper.readTree(offers).get("offers");
             offers2 = objectMapper.readerFor(Offers.class).readValue(offers1);
         } catch (IOException e) {
-                throw new OffersException(e);
+            throw new OffersException(e);
         }
         return offers2;
     }

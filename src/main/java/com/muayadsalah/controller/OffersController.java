@@ -34,7 +34,7 @@ public class OffersController {
                         @RequestParam(name = "minTripStartDate", required = false) Integer minTotalRate,
                         @RequestParam(name = "minTripStartDate", required = false) Integer maxTotalRate,
                         @RequestParam(name = "minTripStartDate", required = false) Double minGuestRating,
-                        @RequestParam(name = "minTripStartDate", required = false) Double maxGuestRating){
+                        @RequestParam(name = "minTripStartDate", required = false) Double maxGuestRating) {
         return offersService.getOffers(destinationName,
                 destinationCity,
                 destinationCountry,

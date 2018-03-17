@@ -53,7 +53,7 @@ public class OfferDateRange extends ModelBase {
 
     public static class ArrayToDateConverter extends StdConverter<ArrayList<Integer>, LocalDate> {
         public LocalDate convert(ArrayList<Integer> value) {
-            if(value == null) return null;
+            if (value == null) return null;
             return LocalDate.of(value.get(0), value.get(1), value.get(2));
         }
     }

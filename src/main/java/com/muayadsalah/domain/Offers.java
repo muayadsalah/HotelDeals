@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Muayad on 3/16/2018.
  */
-public class Offers extends ModelBase{
+public class Offers extends ModelBase {
     @Valid
     private List<Hotel> hotels = new ArrayList<Hotel>();
 
