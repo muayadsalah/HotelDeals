@@ -23,7 +23,7 @@ public class OffersController {
         this.offerService = offerService;
     }
 
-    @GetMapping("/api/deals")
+    @GetMapping("/api/offers")
     List<Offer> getAllOffers(
             @RequestParam(name = "destinationCity", required = false) String destinationCity,
             @RequestParam(name = "destinationCountry", required = false) String destinationCountry,
