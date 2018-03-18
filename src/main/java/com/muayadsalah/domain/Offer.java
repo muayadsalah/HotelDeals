@@ -34,7 +34,7 @@ public class Offer extends ModelBase {
     private Double hotelGuestReviewRating;
 
     @JsonProperty(required = true)
-    private Integer hotelReviewTotal;
+    private Long hotelReviewTotal;
 
     @JsonProperty(required = true)
     private Double averagePriceValue;
@@ -83,7 +83,7 @@ public class Offer extends ModelBase {
                  String hotelAddress,
                  Double hotelStarRating,
                  Double hotelGuestReviewRating,
-                 Integer hotelReviewTotal,
+                 Long hotelReviewTotal,
                  Double averagePriceValue,
                  Double totalPriceValue,
                  Double crossOutPriceValue,
@@ -183,11 +183,11 @@ public class Offer extends ModelBase {
         this.hotelGuestReviewRating = hotelGuestReviewRating;
     }
 
-    public Integer getHotelReviewTotal() {
+    public Long getHotelReviewTotal() {
         return hotelReviewTotal;
     }
 
-    public void setHotelReviewTotal(Integer hotelReviewTotal) {
+    public void setHotelReviewTotal(Long hotelReviewTotal) {
         this.hotelReviewTotal = hotelReviewTotal;
     }
 

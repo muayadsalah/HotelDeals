@@ -8,10 +8,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Destination extends ModelBase {
 
     @JsonProperty(required = true)
-    private Integer regionID;
+    private Long regionID;
 
     @JsonProperty(required = true)
-    private Integer associatedMultiCityRegionId;
+    private Long associatedMultiCityRegionId;
 
     @JsonProperty(required = true)
     private String longName;
@@ -37,19 +37,19 @@ public class Destination extends ModelBase {
     public Destination() {
     }
 
-    public Integer getRegionID() {
+    public Long getRegionID() {
         return regionID;
     }
 
-    public void setRegionID(Integer regionID) {
+    public void setRegionID(Long regionID) {
         this.regionID = regionID;
     }
 
-    public Integer getAssociatedMultiCityRegionId() {
+    public Long getAssociatedMultiCityRegionId() {
         return associatedMultiCityRegionId;
     }
 
-    public void setAssociatedMultiCityRegionId(Integer associatedMultiCityRegionId) {
+    public void setAssociatedMultiCityRegionId(Long associatedMultiCityRegionId) {
         this.associatedMultiCityRegionId = associatedMultiCityRegionId;
     }
 

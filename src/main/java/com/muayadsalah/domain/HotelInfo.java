@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class HotelInfo extends ModelBase {
 
     @JsonProperty(required = true)
-    private Integer hotelId;
+    private Long hotelId;
 
     @JsonProperty(required = true)
     private String hotelName;
@@ -20,7 +20,7 @@ public class HotelInfo extends ModelBase {
     private String hotelDestination;
 
     @JsonProperty(required = true)
-    private Integer hotelDestinationRegionID;
+    private Long hotelDestinationRegionID;
 
     @JsonProperty(required = true)
     private String hotelLongDestination;
@@ -50,7 +50,7 @@ public class HotelInfo extends ModelBase {
     private Double hotelGuestReviewRating;
 
     @JsonProperty(required = true)
-    private Integer hotelReviewTotal;
+    private Long hotelReviewTotal;
 
     @JsonProperty(required = true)
     private String hotelImageUrl;
@@ -64,11 +64,11 @@ public class HotelInfo extends ModelBase {
     public HotelInfo() {
     }
 
-    public Integer getHotelId() {
+    public Long getHotelId() {
         return hotelId;
     }
 
-    public void setHotelId(Integer hotelId) {
+    public void setHotelId(Long hotelId) {
         this.hotelId = hotelId;
     }
 
@@ -96,11 +96,11 @@ public class HotelInfo extends ModelBase {
         this.hotelDestination = hotelDestination;
     }
 
-    public Integer getHotelDestinationRegionID() {
+    public Long getHotelDestinationRegionID() {
         return hotelDestinationRegionID;
     }
 
-    public void setHotelDestinationRegionID(Integer hotelDestinationRegionID) {
+    public void setHotelDestinationRegionID(Long hotelDestinationRegionID) {
         this.hotelDestinationRegionID = hotelDestinationRegionID;
     }
 
@@ -176,11 +176,11 @@ public class HotelInfo extends ModelBase {
         this.hotelGuestReviewRating = hotelGuestReviewRating;
     }
 
-    public Integer getHotelReviewTotal() {
+    public Long getHotelReviewTotal() {
         return hotelReviewTotal;
     }
 
-    public void setHotelReviewTotal(Integer hotelReviewTotal) {
+    public void setHotelReviewTotal(Long hotelReviewTotal) {
         this.hotelReviewTotal = hotelReviewTotal;
     }
 

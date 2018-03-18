@@ -3,9 +3,9 @@ package com.muayadsalah.controller;
 import com.muayadsalah.domain.Offer;
 import com.muayadsalah.service.OfferService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,6 +14,9 @@ import java.util.List;
  */
 
 @RestController
+@Validated
+@ResponseBody
+@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 public class OffersController {
 
     private final OfferService offerService;
