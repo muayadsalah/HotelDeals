@@ -1,0 +1,10 @@
+<div>
+  <div *ngIf="offers.length else no_offers_content">
+    <li class="offer" *ngFor="let offer of offers">
+      <offer-item [offer]="offer"></offer-item>
+    </li>
+  </div>
+  <ng-template #no_offers_content>
+    <h3>No offers to show!</h3>
+  </ng-template>
+</div>

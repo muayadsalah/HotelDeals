@@ -1,0 +1,88 @@
+<div class="row">
+  <h1>Filter Hotel Offers?</h1>
+  <form #filterForm="ngForm">
+
+    <h3>Trip destination</h3>
+    <div class="form-group">
+      <label for="destinationCountry">Country</label>
+      <select class="form-control" id="destinationCountry"
+              name="destinationCountry" [(ngModel)]="filters.destinationCountry">
+        <option *ngFor="let country of countryNamesOptions">
+          {{country}}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="destinationCity">City</label>
+      <input type="text" class="form-control" id="destinationCity"
+             name="destinationCity" [(ngModel)]="filters.destinationCity">
+    </div>
+
+    <div class="form-group">
+      <label for="regionIds">Region Id/Ids</label>
+      <input type="text" class="form-control" id="regionIds"
+             name="regionIds" [(ngModel)]="filters.regionIds">
+    </div>
+
+    <hr style="clear: both"/>
+    <h3>Trip time details</h3>
+    <div class="form-group">
+      <label for="lengthOfStay">Length of Stay</label>
+      <input type="number" class="form-control" id="lengthOfStay"
+             name="lengthOfStay" [(ngModel)]="filters.lengthOfStay">
+    </div>
+
+    <div class="form-group col-xs-6 col-md-6">
+      <label for="minTripStartDate">Minimum Trip Start Date</label>
+      <input type="date" class="form-control" id="minTripStartDate"
+             name="minTripStartDate" [(ngModel)]="filters.minTripStartDate">
+    </div>
+
+    <div class="form-group col-xs-6 col-md-6">
+      <label for="maxTripStartDate">Maximum Trip Start Date</label>
+      <input type="date" class="form-control" id="maxTripStartDate"
+             name="maxTripStartDate" [(ngModel)]="filters.maxTripStartDate">
+    </div>
+
+    <hr style="clear: both"/>
+    <h3>Hotel rating</h3>
+    <div class="form-group col-xs-6 col-md-6">
+      <label for="minStarRating">Minimum Star Rating</label>
+      <input type="number" class="form-control" id="minStarRating"
+             name="minStarRating" [(ngModel)]="filters.minStarRating">
+    </div>
+
+    <div class="form-group col-xs-6 col-md-6">
+      <label for="maxStarRating">Maximum Star Rating</label>
+      <input type="number" class="form-control" id="maxStarRating"
+             name="maxStarRating" [(ngModel)]="filters.maxStarRating">
+    </div>
+
+    <div class="form-group col-xs-6 col-md-6">
+      <label for="minTotalRate">Minimum Total Rate</label>
+      <input type="number" class="form-control" id="minTotalRate"
+             name="minTotalRate" [(ngModel)]="filters.minTotalRate">
+    </div>
+
+    <div class="form-group col-xs-6 col-md-6">
+      <label for="maxTotalRate">Maximum Total Rate</label>
+      <input type="number" class="form-control" id="maxTotalRate"
+             name="maxTotalRate" [(ngModel)]="filters.maxTotalRate">
+    </div>
+
+    <div class="form-group col-xs-6 col-md-6">
+      <label for="minGuestRating">Minimum Guest Rating</label>
+      <input type="number" class="form-control" id="minGuestRating"
+             name="minGuestRating" [(ngModel)]="filters.minGuestRating">
+    </div>
+
+    <div class="form-group col-xs-6 col-md-6">
+      <label for="maxGuestRating">Maximum Guest Rating</label>
+      <input type="number" class="form-control" id="maxGuestRating"
+             name="maxGuestRating" [(ngModel)]="filters.maxGuestRating">
+    </div>
+
+    <button type="submit" class="btn btn-success btn-group-justified" (click)="filterOffers()">Filter</button>
+  </form>
+</div>

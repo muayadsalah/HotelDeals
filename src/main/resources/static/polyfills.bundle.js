@@ -3657,7 +3657,6 @@ webpackJsonp(["polyfills"], {
                     }
                     return delegate;
                 }
-
 // TODO: @JiaLiPassion, support cancel task later if necessary
                 function patchMacroTask(obj, funcName, metaCreator) {
                     var setNative = null;

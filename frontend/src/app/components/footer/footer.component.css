@@ -1,0 +1,20 @@
+ul.footer {
+  margin-top: 10px;
+  text-align: center;
+}
+
+ul.footer li {
+  color: #333;
+  display: inline-block;
+}
+
+.footer {
+  color: whitesmoke;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: -35pt;
+  /* negative value of footer height */
+  height: 35pt;
+  clear: both;
+}
