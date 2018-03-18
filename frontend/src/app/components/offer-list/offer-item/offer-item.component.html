@@ -1,8 +1,31 @@
+
+
+
+
 <div class="row offer-item">
-  <div class="col-sm-6">
-    <img src={{offer.hotelImageUrl}}>
+  <div class="col-md-4 col-xs-6 hotel-image-holder">
+    <a href="{{offer.hotelInfositeUrl}}">
+      <img src={{offer.hotelImageUrl}} class="hotel-image">
+    </a>
+
+    <hr style="clear: both"/>
+
+    <h4 style="">Rating <i class="em em-star2"></i></h4>
+    <div class="section-wraper">
+      <label>Stars: {{offer.hotelStarRating}}</label>
+      <label class="pipe-label"> | </label>
+      <label> Total Reviews: {{offer.hotelReviewTotal}}</label>
+    </div>
+
+    <hr style="clear: both"/>
+    <h4>More info from expedia?</h4>
+    <div class="section-wraper">
+      <a href="{{offer.hotelInfositeUrl}}">Hotel site</a>
+      <label class="pipe-label"> | </label>
+      <a href="{{offer.hotelSearchResultUrl}}">Search results</a>
+    </div>
   </div>
-  <div class="col-sm-6">
+  <div class="col-md-8  col-xs-6 offer-details-holder">
     <offer-details [offer]="offer"></offer-details>
   </div>
 </div>

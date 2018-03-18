@@ -1,0 +1,5 @@
+.container .jumbotron, .container-fluid .jumbotron {
+  padding-top: 10pt;
+  padding-bottom: 0pt;
+  background-color: white;
+}

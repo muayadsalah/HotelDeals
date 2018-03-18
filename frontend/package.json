@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve --proxy-config proxy-config.json",
     "build": "ng build --prod",
-    "deploy": "copyfiles -f dist/** ../src/main/resources/static",
+    "deploy": "copyfiles -a dist/** ../src/main/resources/static",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
