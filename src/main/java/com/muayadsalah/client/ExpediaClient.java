@@ -11,18 +11,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(name = "https://expedia", url = "${expedia.url}", configuration = ExpediaClientConfig.class)
 public interface ExpediaClient {
-    @GetMapping(consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    String getOffers(@RequestParam(name = "minTripStartDate", required = false) String destinationName,
-                     @RequestParam(name = "minTripStartDate", required = false) String destinationCity,
-                     @RequestParam(name = "destinationCountry", required = false) String destinationCountry,
-                     @RequestParam(name = "regionIds", required = false) int[] regionIds,
-                     @RequestParam(name = "minTripStartDate", required = false) Integer lengthOfStay,
-                     @RequestParam(name = "minTripStartDate", required = false) String minTripStartDate,
-                     @RequestParam(name = "minTripStartDate", required = false) String maxTripStartDate,
-                     @RequestParam(name = "minTripStartDate", required = false) Double minStarRating,
-                     @RequestParam(name = "minTripStartDate", required = false) Double maxStarRating,
-                     @RequestParam(name = "minTripStartDate", required = false) Integer minTotalRate,
-                     @RequestParam(name = "minTripStartDate", required = false) Integer maxTotalRate,
-                     @RequestParam(name = "minTripStartDate", required = false) Double minGuestRating,
-                     @RequestParam(name = "minTripStartDate", required = false) Double maxGuestRating);
+
+    @GetMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    String getOffers(
+            @RequestParam(name = "destinationCity", required = false) String destinationCity,
+            @RequestParam(name = "destinationCountry", required = false) String destinationCountry,
+            @RequestParam(name = "regionIds", required = false) int[] regionIds,
+            @RequestParam(name = "lengthOfStay", required = false) Integer lengthOfStay,
+            @RequestParam(name = "minTripStartDate", required = false) String minTripStartDate,
+            @RequestParam(name = "maxTripStartDate", required = false) String maxTripStartDate,
+            @RequestParam(name = "minStarRating", required = false) Double minStarRating,
+            @RequestParam(name = "maxStarRating", required = false) Double maxStarRating,
+            @RequestParam(name = "minTotalRate", required = false) Integer minTotalRate,
+            @RequestParam(name = "maxTotalRate", required = false) Integer maxTotalRate,
+            @RequestParam(name = "minGuestRating", required = false) Double minGuestRating,
+            @RequestParam(name = "maxGuestRating", required = false) Double maxGuestRating
+    );
 }

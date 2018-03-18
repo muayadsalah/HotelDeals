@@ -24,20 +24,21 @@ public class OffersController {
     }
 
     @GetMapping("/api/deals")
-    List<Offer> getAllOffers(@RequestParam(name = "minTripStartDate", required = false) String destinationName,
-                             @RequestParam(name = "minTripStartDate", required = false) String destinationCity,
-                             @RequestParam(name = "destinationCountry", required = false) String destinationCountry,
-                             @RequestParam(name = "regionIds", required = false) int[] regionIds,
-                             @RequestParam(name = "minTripStartDate", required = false) Integer lengthOfStay,
-                             @RequestParam(name = "minTripStartDate", required = false) String minTripStartDate,
-                             @RequestParam(name = "minTripStartDate", required = false) String maxTripStartDate,
-                             @RequestParam(name = "minTripStartDate", required = false) Double minStarRating,
-                             @RequestParam(name = "minTripStartDate", required = false) Double maxStarRating,
-                             @RequestParam(name = "minTripStartDate", required = false) Integer minTotalRate,
-                             @RequestParam(name = "minTripStartDate", required = false) Integer maxTotalRate,
-                             @RequestParam(name = "minTripStartDate", required = false) Double minGuestRating,
-                             @RequestParam(name = "minTripStartDate", required = false) Double maxGuestRating) {
-        return offerService.getOffers(destinationName,
+    List<Offer> getAllOffers(
+            @RequestParam(name = "destinationCity", required = false) String destinationCity,
+            @RequestParam(name = "destinationCountry", required = false) String destinationCountry,
+            @RequestParam(name = "regionIds", required = false) int[] regionIds,
+            @RequestParam(name = "lengthOfStay", required = false) Integer lengthOfStay,
+            @RequestParam(name = "minTripStartDate", required = false) String minTripStartDate,
+            @RequestParam(name = "maxTripStartDate", required = false) String maxTripStartDate,
+            @RequestParam(name = "minStarRating", required = false) Double minStarRating,
+            @RequestParam(name = "maxStarRating", required = false) Double maxStarRating,
+            @RequestParam(name = "minTotalRate", required = false) Integer minTotalRate,
+            @RequestParam(name = "maxTotalRate", required = false) Integer maxTotalRate,
+            @RequestParam(name = "minGuestRating", required = false) Double minGuestRating,
+            @RequestParam(name = "maxGuestRating", required = false) Double maxGuestRating
+    ) {
+        return offerService.getOffers(
                 destinationCity,
                 destinationCountry,
                 regionIds,

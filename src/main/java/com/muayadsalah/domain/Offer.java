@@ -75,13 +75,27 @@ public class Offer extends ModelBase {
     public Offer() {
     }
 
-    public Offer(String destinationShortName, String destinationCountry, String destinationCity,
-                 String destinationProvince, String hotelName, String hotelAddress,
-                 Double hotelStarRating, Double hotelGuestReviewRating, Integer hotelReviewTotal,
-                 Double averagePriceValue, Double totalPriceValue, Double crossOutPriceValue,
-                 Double originalPricePerNight, Double percentSavings, String priceCurrency,
-                 LocalDate travelStartDate, LocalDate travelEndDate, Integer lengthOfStay, String hotelImageUrl,
-                 String hotelInfositeUrl, String hotelSearchResultUrl) {
+    public Offer(String destinationShortName,
+                 String destinationCountry,
+                 String destinationCity,
+                 String destinationProvince,
+                 String hotelName,
+                 String hotelAddress,
+                 Double hotelStarRating,
+                 Double hotelGuestReviewRating,
+                 Integer hotelReviewTotal,
+                 Double averagePriceValue,
+                 Double totalPriceValue,
+                 Double crossOutPriceValue,
+                 Double originalPricePerNight,
+                 Double percentSavings,
+                 String priceCurrency,
+                 LocalDate travelStartDate,
+                 LocalDate travelEndDate,
+                 Integer lengthOfStay,
+                 String hotelImageUrl,
+                 String hotelInfositeUrl,
+                 String hotelSearchResultUrl) {
         this.destinationShortName = destinationShortName;
         this.destinationCountry = destinationCountry;
         this.destinationCity = destinationCity;

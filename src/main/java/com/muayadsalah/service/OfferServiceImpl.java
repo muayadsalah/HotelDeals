@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,20 +37,21 @@ public class OfferServiceImpl implements OfferService {
     }
 
     @Override
-    public List<Offer> getOffers(String destinationName,
-                                 String destinationCity,
-                                 String destinationCountry,
-                                 int[] regionIds,
-                                 Integer lengthOfStay,
-                                 String minTripStartDate,
-                                 String maxTripStartDate,
-                                 Double minStarRating,
-                                 Double maxStarRating,
-                                 Integer minTotalRate,
-                                 Integer maxTotalRate,
-                                 Double minGuestRating,
-                                 Double maxGuestRating) {
-        String expediaResponseString = expediaClient.getOffers(destinationName,
+    public List<Offer> getOffers(
+            String destinationCity,
+            String destinationCountry,
+            int[] regionIds,
+            Integer lengthOfStay,
+            String minTripStartDate,
+            String maxTripStartDate,
+            Double minStarRating,
+            Double maxStarRating,
+            Integer minTotalRate,
+            Integer maxTotalRate,
+            Double minGuestRating,
+            Double maxGuestRating
+    ) {
+        String expediaResponseString = expediaClient.getOffers(
                 destinationCity,
                 destinationCountry,
                 regionIds,
@@ -67,8 +69,9 @@ public class OfferServiceImpl implements OfferService {
             JsonNode hotelArrayNode = objectMapper.readTree(expediaResponseString)
                     .get(offersNodeName)
                     .get(hotelsNodeName);
-            hotels = objectMapper.readerFor(new TypeReference<List<Hotel>>() {
-            }).readValue(hotelArrayNode);
+            if (hotelArrayNode != null)
+                hotels = objectMapper.readerFor(new TypeReference<List<Hotel>>() {
+                }).readValue(hotelArrayNode);
         } catch (IOException e) {
             throw new OffersException(e);
         }
@@ -77,6 +80,9 @@ public class OfferServiceImpl implements OfferService {
     }
 
     private List<Offer> getOffersFromHotels(List<Hotel> hotels) {
+        if (hotels == null)
+            return Collections.emptyList();
+
         List<Offer> offers = hotels.stream().map(hotel -> {
             return new Offer(hotel.getDestination().getShortName(),
                     hotel.getDestination().getCountry(),

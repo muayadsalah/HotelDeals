@@ -2,10 +2,16 @@ logging:
   level:
     org:
       springframework: INFO
+    com:
+      muayadsalah:
+        client:
+          ExpediaClient: INFO
 
 spring:
   profiles:
     active: production
+  application:
+    name: HotelDeals
 
 server:
   port: ${PORT:5000}
