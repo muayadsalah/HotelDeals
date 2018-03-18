@@ -1,7 +1,6 @@
 package com.muayadsalah.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -9,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestParam;
  * Created by Muayad on 3/16/2018.
  */
 
-@FeignClient(name = "https://expedia", url = "${expedia.url}", configuration = ExpediaClientConfig.class)
+@FeignClient(name = "ExpediaOffersSVC", url = "${expedia.url}")
 public interface ExpediaClient {
 
-    @GetMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @GetMapping
     String getOffers(
             @RequestParam(name = "destinationCity", required = false) String destinationCity,
             @RequestParam(name = "destinationCountry", required = false) String destinationCountry,

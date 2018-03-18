@@ -9,9 +9,13 @@ import com.muayadsalah.domain.Offer;
 import com.muayadsalah.exception.OffersException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -63,7 +67,8 @@ public class OfferServiceImpl implements OfferService {
                 minTotalRate,
                 maxTotalRate,
                 minGuestRating,
-                maxGuestRating);
+                maxGuestRating
+        );
         List<Hotel> hotels = null;
         try {
             JsonNode hotelArrayNode = objectMapper.readTree(expediaResponseString)
@@ -103,9 +108,19 @@ public class OfferServiceImpl implements OfferService {
                     hotel.getOfferDateRange().getTravelEndDate(),
                     hotel.getOfferDateRange().getLengthOfStay(),
                     hotel.getHotelInfo().getHotelImageUrl(),
-                    hotel.getHotelUrls().getHotelInfositeUrl(),
-                    hotel.getHotelUrls().getHotelSearchResultUrl());
+                    decodeUrl(hotel.getHotelUrls().getHotelInfositeUrl()),
+                    decodeUrl(hotel.getHotelUrls().getHotelSearchResultUrl()));
         }).collect(Collectors.toList());
         return offers;
+    }
+
+    private String decodeUrl(String encodedUrl)throws HttpMessageNotReadableException {
+        String url;
+        try {
+            url = URLDecoder.decode(encodedUrl, StandardCharsets.UTF_8.toString());
+        } catch (UnsupportedEncodingException ex) {
+            throw new HttpMessageNotReadableException("Error while decoding the url: " + encodedUrl);
+        }
+        return url;
     }
 }

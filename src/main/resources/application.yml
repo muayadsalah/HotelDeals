@@ -5,7 +5,7 @@ logging:
     com:
       muayadsalah:
         client:
-          ExpediaClient: INFO
+          ExpediaClient: DEBUG
 
 spring:
   profiles:
@@ -23,3 +23,11 @@ expedia:
       node:
         offers: offers
         hotels: Hotel
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
