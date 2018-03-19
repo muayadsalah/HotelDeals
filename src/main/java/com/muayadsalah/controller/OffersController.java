@@ -3,9 +3,9 @@ package com.muayadsalah.controller;
 import com.muayadsalah.domain.Offer;
 import com.muayadsalah.service.OfferService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -13,10 +13,7 @@ import java.util.List;
  * Created by Muayad on 3/16/2018.
  */
 
-@RestController
-@Validated
-@ResponseBody
-@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+@RestController("/api/offers")
 public class OffersController {
 
     private final OfferService offerService;
@@ -26,8 +23,8 @@ public class OffersController {
         this.offerService = offerService;
     }
 
-    @GetMapping("/api/offers")
-    List<Offer> getAllOffers(
+    @GetMapping
+    List<Offer> getOffers(
             @RequestParam(name = "destinationCity", required = false) String destinationCity,
             @RequestParam(name = "destinationCountry", required = false) String destinationCountry,
             @RequestParam(name = "regionIds", required = false) int[] regionIds,
