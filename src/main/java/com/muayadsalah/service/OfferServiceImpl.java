@@ -107,7 +107,7 @@ public class OfferServiceImpl implements OfferService {
                     hotel.getOfferDateRange().getTravelStartDate(),
                     hotel.getOfferDateRange().getTravelEndDate(),
                     hotel.getOfferDateRange().getLengthOfStay(),
-                    hotel.getHotelInfo().getHotelImageUrl(),
+                    getLargerImageURL(hotel.getHotelInfo().getHotelImageUrl()),
                     decodeUrl(hotel.getHotelUrls().getHotelInfositeUrl()),
                     decodeUrl(hotel.getHotelUrls().getHotelSearchResultUrl()));
         }).collect(Collectors.toList());
@@ -122,5 +122,9 @@ public class OfferServiceImpl implements OfferService {
             throw new HttpMessageNotReadableException("Error while decoding the url: " + encodedUrl);
         }
         return url;
+    }
+
+    private String getLargerImageURL(String url) {
+        return url.replaceAll("_t.jpg", "_y.jpg");
     }
 }
