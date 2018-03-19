@@ -13,7 +13,7 @@ import java.util.List;
  * Created by Muayad on 3/16/2018.
  */
 
-@RestController("/api/offers")
+@RestController
 public class OffersController {
 
     private final OfferService offerService;
@@ -23,7 +23,7 @@ public class OffersController {
         this.offerService = offerService;
     }
 
-    @GetMapping
+    @GetMapping("/api/offers")
     List<Offer> getOffers(
             @RequestParam(name = "destinationCity", required = false) String destinationCity,
             @RequestParam(name = "destinationCountry", required = false) String destinationCountry,
