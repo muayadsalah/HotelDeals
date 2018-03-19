@@ -17,7 +17,7 @@
 
 <h4 style="">Price <i class="em em-money_with_wings"></i></h4>
 <div style="display: inline">
-  <label>Total: {{offer.totalPriceValue | currency: offer.priceCurrency}} | Original/night: {{offer.originalPricePerNight | currency: offer.priceCurrency}} | Savings: {{offer.percentSavings | percent}}</label>
+  <label>Total: {{offer.totalPriceValue | currency: offer.priceCurrency}} | Original/night: {{offer.originalPricePerNight | currency: offer.priceCurrency}} | Savings: {{offer.percentSavings / 100 | percent:'2.0-2'}}</label>
 </div>
 
 <hr style="clear: both"/>
@@ -25,4 +25,13 @@
 <h4 style="">Trip <i class="em em-spiral_calendar_pad"></i></h4>
 <div style="display: inline">
   <label>From: {{offer.travelStartDate}} to {{offer.travelEndDate}} (Number of days: {{offer.lengthOfStay}})</label>
+</div>
+
+<hr style="clear: both"/>
+
+<h4 style="">Rating <i class="em em-star2"></i></h4>
+<div class="section-wraper">
+  <label>Stars: {{offer.hotelStarRating}}</label>
+  <label class="pipe-label"> | </label>
+  <label> Total Reviews: {{offer.hotelReviewTotal}}</label>
 </div>

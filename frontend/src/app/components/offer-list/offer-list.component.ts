@@ -9,14 +9,24 @@ import {Observable} from "rxjs/Observable";
   styleUrls: ['./offer-list.component.css']
 })
 export class OfferListComponent implements OnInit {
-  offers$: Observable<Offer[]>;
+  private static RETRIEVING_OFFERS: string = "Retrieving offers,,,";
+  private static NO_OFFERS: string = "No offers found!";
+
   offers: Array<Offer> = [];
+  noOffersMessage: string = OfferListComponent.RETRIEVING_OFFERS;
 
   constructor(private offerService: OfferService) {
   }
 
   ngOnInit() {
-    // this.offers$ = this.offerService.offers$;
-    this.offerService.offers$.subscribe(offers => this.offers = offers);
+    this.offerService.offers$.subscribe(offers => {
+      this.offers = offers
+      this.noOffersMessage = this.offers.length? OfferListComponent.RETRIEVING_OFFERS : OfferListComponent.NO_OFFERS;
+    });
+
+    this.offerService.queryParams$.subscribe(params => {
+      this.offers = [];
+      this.noOffersMessage = OfferListComponent.RETRIEVING_OFFERS;
+    });
   }
 }
