@@ -7,6 +7,7 @@
       <label for="destinationCountry">Country</label>
       <select class="form-control" id="destinationCountry"
               name="destinationCountry" [(ngModel)]="filters.destinationCountry">
+        <option></option>
         <option *ngFor="let country of countryNamesOptions">
           {{country}}
         </option>
@@ -50,36 +51,40 @@
     <div class="form-group col-xs-6 col-md-6">
       <label for="minStarRating">Minimum Star Rating</label>
       <input type="number" class="form-control" id="minStarRating"
+             step="0.5" min="1" max="5"
              name="minStarRating" [(ngModel)]="filters.minStarRating">
     </div>
 
     <div class="form-group col-xs-6 col-md-6">
       <label for="maxStarRating">Maximum Star Rating</label>
       <input type="number" class="form-control" id="maxStarRating"
+             step="0.5" min="1" max="5"
              name="maxStarRating" [(ngModel)]="filters.maxStarRating">
     </div>
 
     <div class="form-group col-xs-6 col-md-6">
       <label for="minTotalRate">Minimum Total Rate</label>
-      <input type="number" class="form-control" id="minTotalRate"
+      <input type="number" class="form-control" id="minTotalRate" min="0"
              name="minTotalRate" [(ngModel)]="filters.minTotalRate">
     </div>
 
     <div class="form-group col-xs-6 col-md-6">
       <label for="maxTotalRate">Maximum Total Rate</label>
-      <input type="number" class="form-control" id="maxTotalRate"
+      <input type="number" class="form-control" id="maxTotalRate" min="0"
              name="maxTotalRate" [(ngModel)]="filters.maxTotalRate">
     </div>
 
     <div class="form-group col-xs-6 col-md-6">
       <label for="minGuestRating">Minimum Guest Rating</label>
       <input type="number" class="form-control" id="minGuestRating"
+             step="0.1" min="1" max="5"
              name="minGuestRating" [(ngModel)]="filters.minGuestRating">
     </div>
 
     <div class="form-group col-xs-6 col-md-6">
       <label for="maxGuestRating">Maximum Guest Rating</label>
       <input type="number" class="form-control" id="maxGuestRating"
+             step="0.1" min="1" max="5"
              name="maxGuestRating" [(ngModel)]="filters.maxGuestRating">
     </div>
 
