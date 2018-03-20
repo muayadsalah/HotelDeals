@@ -41,6 +41,11 @@ The most important thing I've learnt in Angular is while trying to make the HTTP
 - Angular-CLI
 - RxJS
 
+## Travis-CI
+This GitHub repository is connected to *Travis-CI*, so each time I push changes, Travis builds the application and runs the tests.
+
+Also, Heroku is connected with this repository, and it is configured for automatic deploys if the CI build was successful.
+
 # Thoughts and Future Work
 #### Resolved issues
 - I noticed that the images of the hotels are in low resolution, and also noticed that we can get higher resolutions by changing the image url's suffix.

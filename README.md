@@ -38,3 +38,6 @@ After you see this log, go to the browser, and type the url: `localhost:4200`.
 This should display the front-end of the application.
 
 *Note that in order to run the front-end and see the offers list, the back-end needs to be started.*
+
+# Live Demo
+[Here](https://protected-wave-96406.herokuapp.com/) is the application deployed in Heroku.
